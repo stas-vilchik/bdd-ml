@@ -1,0 +1,1 @@
+mockEmitters[root].emit("ready");

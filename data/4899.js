@@ -1,0 +1,54 @@
+{
+  mockResponse = {
+    "/fruits": {
+      clock: "c:fake-clock:3",
+      files: [
+        {
+          exists: true,
+          mtime_ms: {
+            toNumber: () => 42
+          },
+          name: "kiwi.js"
+        }
+      ],
+      is_fresh_instance: false,
+      version: "4.5.0"
+    },
+    "/vegetables": {
+      clock: "c:fake-clock:4",
+      files: [
+        {
+          exists: true,
+          mtime_ms: {
+            toNumber: () => 33
+          },
+          name: "melon.json"
+        }
+      ],
+      is_fresh_instance: true,
+      version: "4.5.0"
+    }
+  };
+  const clocks = Object.assign(Object.create(null), {
+    "/fruits": "c:fake-clock:1",
+    "/vegetables": "c:fake-clock:2"
+  });
+  return watchmanCrawl({
+    data: {
+      clocks,
+      files: mockFiles
+    },
+    extensions: ["js", "json"],
+    ignore: pearMatcher,
+    roots: ["/fruits", "/vegetables"]
+  }).then(data => {
+    expect(data.clocks).toEqual({
+      "/fruits": "c:fake-clock:3",
+      "/vegetables": "c:fake-clock:4"
+    });
+    expect(data.files).toEqual({
+      "/fruits/kiwi.js": ["", 42, 0, []],
+      "/vegetables/melon.json": ["", 33, 0, []]
+    });
+  });
+}

@@ -1,0 +1,6 @@
+{
+  (el.props || (el.props = [])).push({
+    name: name,
+    value: value
+  });
+}

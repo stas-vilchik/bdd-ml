@@ -1,0 +1,3 @@
+{
+  FallbackCompositionState = require("FallbackCompositionState");
+}

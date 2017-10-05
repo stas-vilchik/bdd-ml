@@ -1,0 +1,3 @@
+{
+  watchImportsLoad(callback, doc);
+}

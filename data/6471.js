@@ -1,0 +1,3 @@
+{
+  superWrapperConstructor.call(this, node);
+}

@@ -1,0 +1,3 @@
+{
+  expect("apple").toBe("apple");
+}

@@ -1,0 +1,5 @@
+{
+  return GroupModel.findOne({
+    name
+  });
+}

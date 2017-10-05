@@ -1,0 +1,3 @@
+{
+  jestExpect(small).toBeLessThan(big);
+}

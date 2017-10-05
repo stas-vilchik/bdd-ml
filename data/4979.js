@@ -1,0 +1,7 @@
+{
+  const obj = {
+    func: () => "some text"
+  };
+  moduleMocker.spyOn(obj, "func").mockReturnValueOnce(undefined);
+  expect(obj.func()).not.toEqual("some text");
+}

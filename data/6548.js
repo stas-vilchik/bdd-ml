@@ -1,0 +1,3 @@
+{
+  return currentTargetTable.get(this);
+}

@@ -1,0 +1,1 @@
+allPaths.concat(bundle.paths);

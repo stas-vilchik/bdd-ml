@@ -1,0 +1,3 @@
+{
+  setTimeout(nextTickHandler, 0);
+}

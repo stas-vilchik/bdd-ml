@@ -1,0 +1,5 @@
+{
+  ja(function() {
+    ja(t);
+  });
+}

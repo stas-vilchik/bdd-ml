@@ -1,0 +1,4 @@
+{
+  entry: name,
+  time: duration
+}

@@ -1,0 +1,5 @@
+{
+  raf(function() {
+    raf(fn);
+  });
+}

@@ -1,0 +1,3 @@
+{
+  return writeRootFile(filename, content);
+}

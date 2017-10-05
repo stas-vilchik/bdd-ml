@@ -1,0 +1,3 @@
+{
+  return ReactDOMEventListener._enabled;
+}

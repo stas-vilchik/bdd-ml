@@ -1,0 +1,4 @@
+{
+  yield 'hi';
+  yield 'there';
+}

@@ -1,0 +1,3 @@
+{
+  HTMLElement.call(this, node);
+}

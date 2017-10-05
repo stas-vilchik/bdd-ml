@@ -1,0 +1,3 @@
+{
+  this.setAttribute("class", v);
+}

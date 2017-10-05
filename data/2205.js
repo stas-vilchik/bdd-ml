@@ -1,0 +1,3 @@
+{
+  targets.push(new.target);
+}

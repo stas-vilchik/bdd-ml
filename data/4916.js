@@ -1,0 +1,3 @@
+{
+  expect(() => expect(1).toBe(2)).toThrowErrorMatchingSnapshot();
+}

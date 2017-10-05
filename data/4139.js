@@ -1,0 +1,3 @@
+{
+  fs.writeFileSync(copyOfTestPath, originalTestContent);
+}

@@ -1,0 +1,3 @@
+{
+  return super.hasOwnProperty('m');
+}

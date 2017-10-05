@@ -1,0 +1,3 @@
+{
+  ResponderEventPlugin.GlobalResponderHandler = GlobalResponderHandler;
+}

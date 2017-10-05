@@ -1,0 +1,1 @@
+scriptTransformer.transform(filePath, {});

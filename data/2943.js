@@ -1,0 +1,1 @@
+line.replace(/#.*$/, "").trim();

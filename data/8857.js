@@ -1,0 +1,3 @@
+{
+  return !looseEqual(o, value);
+}

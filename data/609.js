@@ -1,0 +1,3 @@
+{
+  jasmine.Ajax.uninstall();
+}

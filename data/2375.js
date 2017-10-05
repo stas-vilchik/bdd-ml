@@ -1,0 +1,4 @@
+{
+  lengthGetCounter++;
+  return length;
+}

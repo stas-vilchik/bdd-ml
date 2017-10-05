@@ -1,0 +1,3 @@
+{
+  userResolver.mockClear();
+}

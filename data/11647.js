@@ -1,0 +1,3 @@
+{
+  return rewriteTraceLine(line, mapConsumers);
+}

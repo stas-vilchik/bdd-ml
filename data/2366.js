@@ -1,0 +1,4 @@
+{
+  lengthCalls++;
+  return 3;
+}

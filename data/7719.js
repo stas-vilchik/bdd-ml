@@ -1,0 +1,3 @@
+{
+  ResponderEventPlugin.GlobalInteractionHandler = GlobalInteractionHandler;
+}

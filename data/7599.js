@@ -1,0 +1,3 @@
+{
+  expect(PoolableClass.instancePool).toBeDefined();
+}

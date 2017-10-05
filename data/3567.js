@@ -1,0 +1,3 @@
+{
+  return GroupModel.findOne(query);
+}

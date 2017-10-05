@@ -1,0 +1,3 @@
+{
+  return ts.sys.useCaseSensitiveFileNames;
+}

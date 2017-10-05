@@ -1,0 +1,3 @@
+{
+  return (() => object.arguments).call();
+}

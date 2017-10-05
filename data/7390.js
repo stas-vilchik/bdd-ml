@@ -1,0 +1,3 @@
+{
+  node[internalEventHandlersKey] = props;
+}

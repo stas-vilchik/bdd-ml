@@ -1,0 +1,3 @@
+{
+  return UserProjectModel.findById(docId);
+}

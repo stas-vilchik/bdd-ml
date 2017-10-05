@@ -1,0 +1,3 @@
+{
+  stackBatchedUpdates = _batchedUpdates;
+}

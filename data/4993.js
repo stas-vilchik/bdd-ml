@@ -1,0 +1,3 @@
+{
+  moduleMocker.spyOn({}, "method");
+}

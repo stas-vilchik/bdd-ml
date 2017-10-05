@@ -1,0 +1,3 @@
+{
+  return el.matches(selector);
+}

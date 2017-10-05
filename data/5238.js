@@ -1,0 +1,5 @@
+{
+  return {
+    process: jest.fn()
+  };
+}

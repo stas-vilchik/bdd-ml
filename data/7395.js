@@ -1,0 +1,3 @@
+{
+  ReactDOMEventListener._handleTopLevel = handleTopLevel;
+}

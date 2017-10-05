@@ -1,0 +1,3 @@
+{
+  return cloneNode(this, deep);
+}

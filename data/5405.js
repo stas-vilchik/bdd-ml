@@ -1,0 +1,3 @@
+{
+  enabledLanguages.push(lang.tag);
+}

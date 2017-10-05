@@ -1,0 +1,3 @@
+{
+  return backwardsElement(this.lastChild);
+}

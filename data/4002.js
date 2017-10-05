@@ -1,0 +1,3 @@
+{
+  return mockFiles[directoryPath] || [];
+}

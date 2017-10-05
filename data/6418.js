@@ -1,0 +1,1 @@
+parseAndEval(`'foo ' + null`);

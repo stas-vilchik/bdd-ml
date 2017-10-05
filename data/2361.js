@@ -1,0 +1,3 @@
+{
+  assert.equal(this, self);
+}

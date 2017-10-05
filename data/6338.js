@@ -1,0 +1,9 @@
+result.write(
+  updateBundleConfig(
+    bundle.config,
+    filename,
+    format,
+    bundleType,
+    bundle.hasteName
+  )
+);

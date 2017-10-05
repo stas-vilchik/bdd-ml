@@ -1,0 +1,3 @@
+{
+  done(new Error("fail"));
+}

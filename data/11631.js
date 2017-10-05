@@ -1,0 +1,3 @@
+{
+  templateStream.emit("error", err);
+}

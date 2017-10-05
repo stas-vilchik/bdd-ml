@@ -1,0 +1,5 @@
+{
+  return function*() {
+    yield* G();
+  };
+}

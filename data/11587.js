@@ -1,0 +1,3 @@
+{
+  return dir.name === "show";
+}

@@ -1,0 +1,3 @@
+{
+  distributedNodesTable.set(insertionPoint, []);
+}

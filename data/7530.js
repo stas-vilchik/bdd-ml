@@ -1,0 +1,3 @@
+{
+  focusNode(ReactDOMComponentTree.getNodeFromInstance(this));
+}

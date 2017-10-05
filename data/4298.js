@@ -1,0 +1,3 @@
+{
+  expect("sync").toBe("failed");
+}

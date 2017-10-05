@@ -1,0 +1,1 @@
+jestExpect(obj).toHaveProperty(keyPath);

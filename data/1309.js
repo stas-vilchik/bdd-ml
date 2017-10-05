@@ -1,0 +1,3 @@
+{
+  _initialiseProps.call(this);
+}

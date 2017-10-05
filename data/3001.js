@@ -1,0 +1,6 @@
+{
+  return {
+    *[yield iter]() {}
+
+  };
+}

@@ -1,0 +1,5 @@
+{
+  ("use\nstrict");
+
+  with (i);
+}

@@ -1,0 +1,5 @@
+{
+  if (ended < propCount) {
+    end();
+  }
+}

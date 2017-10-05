@@ -1,0 +1,3 @@
+{
+  this.conditionStack.push(condition);
+}

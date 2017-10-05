@@ -1,0 +1,3 @@
+{
+  ReactDOMEventListener._enabled = !!enabled;
+}

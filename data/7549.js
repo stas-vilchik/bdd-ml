@@ -1,0 +1,1 @@
+getComponentName(inst) || UNKNOWN;

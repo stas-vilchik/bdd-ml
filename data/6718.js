@@ -1,0 +1,3 @@
+{
+  return this.hasAttribute("hidden");
+}

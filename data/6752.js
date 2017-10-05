@@ -1,0 +1,3 @@
+{
+  HTMLMediaElement.call(this, node);
+}

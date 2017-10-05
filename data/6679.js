@@ -1,0 +1,3 @@
+{
+  scope.invalidateRendererBasedOnAttribute(el, "class");
+}

@@ -1,0 +1,27 @@
+{
+  var error = new Error("Boom!");
+  var request = {
+    path: "/foo"
+  };
+  var response = {
+    status: 200,
+    data: {
+      foo: "bar"
+    }
+  };
+  enhanceError(
+    error,
+    {
+      foo: "bar"
+    },
+    "ESOMETHING",
+    request,
+    response
+  );
+  expect(error.config).toEqual({
+    foo: "bar"
+  });
+  expect(error.code).toBe("ESOMETHING");
+  expect(error.request).toBe(request);
+  expect(error.response).toBe(response);
+}

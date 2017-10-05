@@ -1,0 +1,3 @@
+{
+  return !!(ReactDOMEventListener && ReactDOMEventListener.isEnabled());
+}

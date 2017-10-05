@@ -1,0 +1,4 @@
+{
+  callbackCalls++;
+  return v === "a";
+}

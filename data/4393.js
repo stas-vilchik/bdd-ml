@@ -1,0 +1,3 @@
+{
+  jestExpect.assertions(0);
+}

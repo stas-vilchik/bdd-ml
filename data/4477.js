@@ -1,0 +1,1 @@
+jestExpect(a).toBeInstanceOf(b);

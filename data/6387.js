@@ -1,0 +1,1 @@
+copyBundleIntoNodePackage(packageName, filename, bundleType);

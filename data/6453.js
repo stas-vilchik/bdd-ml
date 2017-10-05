@@ -1,0 +1,3 @@
+{
+  installProperty(nativePrototype, wrapperPrototype, true);
+}

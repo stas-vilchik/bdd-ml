@@ -1,0 +1,3 @@
+{
+  hasteMap.once("change", resolve);
+}

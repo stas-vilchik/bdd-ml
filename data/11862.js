@@ -1,0 +1,3 @@
+{
+  return needsNormalization(c.block);
+}

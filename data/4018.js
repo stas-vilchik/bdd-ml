@@ -1,0 +1,3 @@
+{
+  infiniteTimerGame(callback);
+}

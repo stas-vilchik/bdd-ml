@@ -1,0 +1,23 @@
+{
+  (this.tag = t),
+    (this.data = e),
+    (this.children = n),
+    (this.text = r),
+    (this.elm = o),
+    (this.ns = void 0),
+    (this.context = i),
+    (this.functionalContext = void 0),
+    (this.key = e && e.key),
+    (this.componentOptions = a),
+    (this.componentInstance = void 0),
+    (this.parent = void 0),
+    (this.raw = !1),
+    (this.isStatic = !1),
+    (this.isRootInsert = !0),
+    (this.isComment = !1),
+    (this.isCloned = !1),
+    (this.isOnce = !1),
+    (this.asyncFactory = s),
+    (this.asyncMeta = void 0),
+    (this.isAsyncPlaceholder = !1);
+}

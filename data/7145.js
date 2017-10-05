@@ -1,0 +1,3 @@
+{
+  HTMLImports.importer.bootDocument(rootDocument);
+}

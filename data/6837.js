@@ -1,0 +1,3 @@
+{
+  return getInnerHTML(this);
+}

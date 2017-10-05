@@ -1,0 +1,3 @@
+{
+  global.process.nextTick(infinitelyRecursingCallback);
+}

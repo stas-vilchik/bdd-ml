@@ -1,0 +1,3 @@
+{
+  warnNoop(publicInstance, "setState");
+}

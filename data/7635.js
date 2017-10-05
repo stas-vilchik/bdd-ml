@@ -1,0 +1,3 @@
+{
+  instanceProps[tag] = props;
+}

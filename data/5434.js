@@ -1,0 +1,4 @@
+{
+  writeRawFiles();
+  generateJS();
+}

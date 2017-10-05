@@ -1,0 +1,3 @@
+{
+  moduleStateValue = value;
+}

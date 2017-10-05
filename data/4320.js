@@ -1,0 +1,3 @@
+{
+  return () => (platform = require(filename));
+}

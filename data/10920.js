@@ -1,0 +1,3 @@
+{
+  return str.charCodeAt(++index);
+}

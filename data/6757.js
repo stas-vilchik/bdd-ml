@@ -1,0 +1,3 @@
+{
+  return trimText(this.textContent);
+}

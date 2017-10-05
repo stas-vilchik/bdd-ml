@@ -1,0 +1,3 @@
+{
+  return el.namespaceURI === ns;
+}

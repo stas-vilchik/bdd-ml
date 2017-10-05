@@ -1,0 +1,3 @@
+{
+  S.Drawing.adjustCanvas();
+}

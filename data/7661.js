@@ -1,0 +1,3 @@
+{
+  EventPluginRegistry.injectEventPluginOrder(["one", "two"]);
+}

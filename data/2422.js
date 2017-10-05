@@ -1,0 +1,3 @@
+{
+  setTimeout(resolve, ms);
+}

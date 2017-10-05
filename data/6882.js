@@ -1,0 +1,3 @@
+{
+  destinationInsertionPointsTable.set(node, undefined);
+}

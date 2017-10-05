@@ -1,0 +1,3 @@
+{
+  return React.createElement("div");
+}

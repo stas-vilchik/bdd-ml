@@ -1,0 +1,1 @@
+getSwaggerInfo(api.path, params);

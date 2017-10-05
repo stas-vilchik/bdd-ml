@@ -1,0 +1,3 @@
+{
+  new ShadowRenderer(host).render();
+}

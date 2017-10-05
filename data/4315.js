@@ -1,0 +1,3 @@
+{
+  expect(native.asyncMethod).toBeDefined();
+}

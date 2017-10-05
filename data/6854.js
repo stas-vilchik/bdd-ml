@@ -1,0 +1,4 @@
+{
+  renderTimer = null;
+  renderAllPending();
+}

@@ -1,0 +1,3 @@
+{
+  key._reactInternalFiber = value;
+}

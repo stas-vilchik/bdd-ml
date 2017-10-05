@@ -1,0 +1,3 @@
+{
+  instanceCache[tag] = hostInst;
+}

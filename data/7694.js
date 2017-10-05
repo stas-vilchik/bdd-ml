@@ -1,0 +1,26 @@
+{
+  var config = oneEventLoopTestConfig(three);
+  config.startShouldSetResponder.captured.grandParent = {
+    order: 0,
+    returnVal: true
+  };
+  config.responderGrant.grandParent = {
+    order: 1
+  };
+  config.responderStart.grandParent = {
+    order: 2
+  };
+  run(config, three, startConfig(three.child, [three.child], [0]));
+  expect(ResponderEventPlugin._getResponder()).toBe(
+    getInstanceFromNode(three.grandParent)
+  );
+  config = oneEventLoopTestConfig(three);
+  config.responderEnd.grandParent = {
+    order: 0
+  };
+  config.responderRelease.grandParent = {
+    order: 1
+  };
+  run(config, three, endConfig(three.child, [three.child], [0]));
+  expect(ResponderEventPlugin._getResponder()).toBe(null);
+}

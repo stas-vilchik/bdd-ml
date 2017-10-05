@@ -1,0 +1,3 @@
+{
+  return resolveSlots(children, context);
+}

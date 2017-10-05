@@ -1,0 +1,3 @@
+{
+  delete config.headers[method];
+}

@@ -1,0 +1,3 @@
+{
+  stubbedModules[`'${module}'`] = devOnlyModuleStub;
+}

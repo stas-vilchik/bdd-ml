@@ -1,0 +1,3 @@
+{
+  ReactDOM.render(Benchmark(), app);
+}

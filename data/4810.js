@@ -1,0 +1,10 @@
+{
+  expect(data.files["/fruits/node_modules/fbjs/index.js"]).toEqual([
+    "",
+    32,
+    0,
+    []
+  ]);
+  expect(data.map.fbjs).not.toBeDefined();
+  expect(fs.readFileSync.mock.calls.length).toBe(6);
+}

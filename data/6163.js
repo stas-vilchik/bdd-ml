@@ -1,0 +1,3 @@
+{
+  expect(invertObject({})).toEqual({});
+}

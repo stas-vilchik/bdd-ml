@@ -1,0 +1,3 @@
+{
+  strats[hook] = mergeHook;
+}

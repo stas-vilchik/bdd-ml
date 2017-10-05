@@ -1,0 +1,3 @@
+{
+  return UserModel.findById(userId);
+}

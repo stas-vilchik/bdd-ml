@@ -1,0 +1,4 @@
+{
+  error = err;
+  failure = true;
+}

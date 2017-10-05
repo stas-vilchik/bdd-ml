@@ -1,0 +1,3 @@
+{
+  assertExtractedData("Hello worldXXX", "XXX");
+}

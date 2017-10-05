@@ -1,0 +1,3 @@
+{
+  arrayContaining("foo").asymmetricMatch([]);
+}

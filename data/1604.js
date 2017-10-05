@@ -1,0 +1,3 @@
+{
+  super.hasOwnProperty("test");
+}

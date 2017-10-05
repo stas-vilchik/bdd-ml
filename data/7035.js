@@ -1,0 +1,3 @@
+{
+  currentRecord = recordWithOldValue = undefined;
+}

@@ -1,0 +1,3 @@
+{
+  parentNode.insertBefore(newNode, referenceNode);
+}

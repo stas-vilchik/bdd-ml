@@ -1,0 +1,3 @@
+{
+  return eventPhaseTable.get(this);
+}

@@ -1,0 +1,1 @@
+encloseShufflePrePass(circles1);

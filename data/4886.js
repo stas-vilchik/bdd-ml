@@ -1,0 +1,3 @@
+{
+  expect(data.files).toEqual({});
+}

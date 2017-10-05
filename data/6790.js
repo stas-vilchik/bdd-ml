@@ -1,0 +1,3 @@
+{
+  parentInterface.call(this, impl);
+}

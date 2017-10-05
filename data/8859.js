@@ -1,0 +1,3 @@
+{
+  e.target.composing = true;
+}

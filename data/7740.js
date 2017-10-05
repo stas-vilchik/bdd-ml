@@ -1,0 +1,3 @@
+{
+  return ComponentTree.getInstanceFromNode(node);
+}

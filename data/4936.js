@@ -1,0 +1,5 @@
+{
+  ensureNoExpected({
+    a: 1
+  });
+}

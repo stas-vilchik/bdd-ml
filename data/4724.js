@@ -1,0 +1,5 @@
+{
+  suites: obj,
+  tests: [],
+  title: ''
+}

@@ -1,0 +1,7 @@
+{
+  callback({
+    timeRemaining() {
+      return Infinity;
+    }
+  });
+}

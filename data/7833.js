@@ -1,0 +1,4 @@
+{
+  stats.update();
+  requestAnimationFrame(rAFloop);
+}

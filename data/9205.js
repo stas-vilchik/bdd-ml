@@ -1,0 +1,3 @@
+{
+  return No.charCodeAt(++Io);
+}

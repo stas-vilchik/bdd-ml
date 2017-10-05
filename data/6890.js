@@ -1,0 +1,4 @@
+{
+  renderAllPending();
+  return getDistributedNodes(this);
+}

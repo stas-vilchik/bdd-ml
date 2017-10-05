@@ -1,0 +1,1 @@
+jestExpect(() => {})[toThrow](111);

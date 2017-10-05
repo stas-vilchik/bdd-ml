@@ -1,0 +1,6 @@
+{
+  let bar;
+  {
+    let bar;
+  }
+}

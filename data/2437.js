@@ -1,0 +1,3 @@
+{
+  this.yyy = "base constructor";
+}

@@ -1,0 +1,3 @@
+{
+  upgradeDocumentTree(wrap(elt.import));
+}

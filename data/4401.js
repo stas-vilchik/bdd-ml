@@ -1,0 +1,3 @@
+{
+  jestExpect(() => any()).toThrow();
+}

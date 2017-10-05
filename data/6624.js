@@ -1,0 +1,3 @@
+{
+  originalRemoveChild.call(parent, child);
+}

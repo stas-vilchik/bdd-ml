@@ -1,0 +1,3 @@
+{
+  fiberHostComponent = hostComponentImpl;
+}

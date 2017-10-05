@@ -1,0 +1,4 @@
+{
+  this.foo = "bar";
+  super();
+}

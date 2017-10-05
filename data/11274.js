@@ -1,0 +1,3 @@
+{
+  strats[type + "s"] = mergeAssets;
+}

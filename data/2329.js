@@ -1,0 +1,3 @@
+{
+  assert.equal(value, "mysql");
+}

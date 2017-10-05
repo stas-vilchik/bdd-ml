@@ -1,0 +1,3 @@
+{
+  expect(groupTestsBySuites([])).toEqual(wrap([]));
+}

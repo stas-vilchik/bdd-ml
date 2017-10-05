@@ -1,0 +1,1 @@
+jestExpect(true).toFailWithoutMessage();

@@ -1,0 +1,3 @@
+{
+  Sub[type] = Super[type];
+}

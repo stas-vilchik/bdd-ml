@@ -1,0 +1,3 @@
+{
+  return readTest(path, testDir);
+}

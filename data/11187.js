@@ -1,0 +1,4 @@
+{
+  result += text;
+  return false;
+}

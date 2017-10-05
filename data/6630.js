@@ -1,0 +1,3 @@
+{
+  return this.firstChild !== null;
+}

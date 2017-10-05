@@ -1,0 +1,5 @@
+{
+  return () => {
+    actions.push(message);
+  };
+}

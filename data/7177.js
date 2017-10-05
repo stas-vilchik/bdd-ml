@@ -1,0 +1,3 @@
+{
+  forDocumentTree(doc, upgradeDocument);
+}

@@ -1,0 +1,5 @@
+{
+  EventPluginRegistry.injectEventPluginsByName({
+    bad: BadPlugin
+  });
+}

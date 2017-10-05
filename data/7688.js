@@ -1,0 +1,3 @@
+{
+  return node._reactInstance;
+}

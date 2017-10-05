@@ -1,0 +1,3 @@
+{
+  t.style.display = "none";
+}

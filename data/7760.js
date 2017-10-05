@@ -1,0 +1,3 @@
+{
+  this.isPersistent = emptyFunction.thatReturnsTrue;
+}

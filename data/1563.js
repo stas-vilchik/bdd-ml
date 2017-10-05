@@ -1,0 +1,5 @@
+{
+  ("any directive prologue");
+
+  foo;
+}

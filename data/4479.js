@@ -1,0 +1,1 @@
+jestExpect({}).toBeInstanceOf(4);

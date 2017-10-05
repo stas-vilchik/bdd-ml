@@ -1,0 +1,4 @@
+{
+  validateInvalidCharacterError(error);
+  done();
+}

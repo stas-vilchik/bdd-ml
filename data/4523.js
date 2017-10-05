@@ -1,0 +1,1 @@
+jestExpect(small).toBeGreaterThanOrEqual(big);

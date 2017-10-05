@@ -1,0 +1,3 @@
+{
+  return nextTick(fn, this);
+}

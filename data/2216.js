@@ -1,0 +1,4 @@
+{
+  this.constructor;
+  super();
+}

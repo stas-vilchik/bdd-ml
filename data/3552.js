@@ -1,0 +1,3 @@
+{
+  renderer.renderToString(context, cb);
+}

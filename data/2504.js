@@ -1,0 +1,3 @@
+{
+  ({} = Object(calls++)), ([] = Object(calls++));
+}

@@ -1,0 +1,3 @@
+{
+  stopPropagationTable.set(this, true);
+}

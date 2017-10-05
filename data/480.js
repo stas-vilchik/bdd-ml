@@ -1,0 +1,3 @@
+{
+  done.fail("Unhandled rejection.");
+}

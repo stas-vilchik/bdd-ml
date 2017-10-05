@@ -1,0 +1,3 @@
+{
+  return getTreeScope(node).root;
+}

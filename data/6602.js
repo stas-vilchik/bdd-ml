@@ -1,0 +1,3 @@
+{
+  assert(node instanceof Node);
+}

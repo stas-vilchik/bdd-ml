@@ -1,0 +1,3 @@
+{
+  CharacterData.call(this, node);
+}

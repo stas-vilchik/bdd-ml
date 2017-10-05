@@ -1,0 +1,4 @@
+{
+  count++;
+  return Animal;
+}

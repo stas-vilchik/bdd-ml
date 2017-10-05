@@ -1,0 +1,3 @@
+{
+  Dep.target = targetStack.pop();
+}

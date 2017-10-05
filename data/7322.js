@@ -1,0 +1,11 @@
+{
+  FallbackCompositionState.initialize(getInput());
+  expect(FallbackCompositionState.getText()).toBe(TEXT);
+  FallbackCompositionState.reset();
+  FallbackCompositionState.initialize(getTextarea());
+  expect(FallbackCompositionState.getText()).toBe(TEXT);
+  FallbackCompositionState.reset();
+  FallbackCompositionState.initialize(getContentEditable());
+  expect(FallbackCompositionState.getText()).toBe(TEXT);
+  FallbackCompositionState.reset();
+}

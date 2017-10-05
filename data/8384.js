@@ -1,0 +1,3 @@
+{
+  return !isReservedTag(el.tag);
+}

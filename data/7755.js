@@ -1,0 +1,3 @@
+{
+  fiberBatchedUpdates = _batchedUpdates;
+}

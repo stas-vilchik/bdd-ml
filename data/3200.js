@@ -1,0 +1,31 @@
+{
+  test.equal(
+    scale
+      .scaleLinear()
+      .clamp("true")
+      .clamp(),
+    true
+  );
+  test.equal(
+    scale
+      .scaleLinear()
+      .clamp(1)
+      .clamp(),
+    true
+  );
+  test.equal(
+    scale
+      .scaleLinear()
+      .clamp("")
+      .clamp(),
+    false
+  );
+  test.equal(
+    scale
+      .scaleLinear()
+      .clamp(0)
+      .clamp(),
+    false
+  );
+  test.end();
+}

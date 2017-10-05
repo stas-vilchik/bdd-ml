@@ -1,0 +1,3 @@
+{
+  jestExpect(test).toBe(true);
+}

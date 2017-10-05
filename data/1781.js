@@ -1,0 +1,3 @@
+{
+  _export("default", foo);
+}

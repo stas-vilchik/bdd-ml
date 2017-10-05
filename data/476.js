@@ -1,0 +1,4 @@
+{
+  source.cancel();
+  request = req;
+}

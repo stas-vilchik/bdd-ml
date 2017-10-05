@@ -1,0 +1,4 @@
+{
+  resolve();
+  cb(...args);
+}

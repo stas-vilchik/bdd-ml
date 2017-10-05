@@ -1,0 +1,9 @@
+{
+  jestExpect("a").not.toBe("b");
+  jestExpect("a").toBe("a");
+  jestExpect(1).not.toBe(2);
+  jestExpect(1).toBe(1);
+  jestExpect(null).not.toBe(undefined);
+  jestExpect(null).toBe(null);
+  jestExpect(undefined).toBe(undefined);
+}

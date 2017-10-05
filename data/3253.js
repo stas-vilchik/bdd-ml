@@ -1,0 +1,31 @@
+{
+  var s = scale.scaleLog();
+  test.deepEqual(
+    s
+      .domain([1e-1, 1e1])
+      .ticks()
+      .map(s.tickFormat()),
+    [
+      "1e-1",
+      "2e-1",
+      "3e-1",
+      "4e-1",
+      "5e-1",
+      "",
+      "",
+      "",
+      "",
+      "1e+0",
+      "2e+0",
+      "3e+0",
+      "4e+0",
+      "5e+0",
+      "",
+      "",
+      "",
+      "",
+      "1e+1"
+    ]
+  );
+  test.end();
+}

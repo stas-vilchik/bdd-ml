@@ -1,0 +1,3 @@
+{
+  updateDirectives(vnode, emptyNode);
+}

@@ -1,0 +1,3 @@
+{
+  return MockModel.insertMany(docs);
+}

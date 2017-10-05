@@ -1,0 +1,4 @@
+{
+  args.pop();
+  foo(...args);
+}

@@ -1,0 +1,3 @@
+{
+  return typeof x === "function";
+}

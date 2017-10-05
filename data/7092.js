@@ -1,0 +1,4 @@
+{
+  --this.inflight;
+  this.checkDone();
+}

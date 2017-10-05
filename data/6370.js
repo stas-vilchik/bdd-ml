@@ -1,0 +1,3 @@
+{
+  devOnlyModuleAliases[devOnlyModule] = devOnlyModuleStub;
+}

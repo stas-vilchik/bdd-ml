@@ -1,0 +1,3 @@
+{
+  EventTarget.call(this, impl);
+}

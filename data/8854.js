@@ -1,0 +1,3 @@
+{
+  actuallySetSelected(el, binding, vm);
+}

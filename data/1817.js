@@ -5,8 +5,6 @@
 
   for (a in b);
 
-  for (i = 0, j = 0; ; );
-
   _export(
     "isOdd",
     (isOdd = (function(isEven) {

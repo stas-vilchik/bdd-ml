@@ -1,0 +1,6 @@
+projectKey=data
+serverUrl=http://localhost:9000
+serverVersion=6.6-SNAPSHOT
+dashboardUrl=http://localhost:9000/dashboard/index/data
+ceTaskId=AV7tIWR2MSnQ-RkdMgDD
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AV7tIWR2MSnQ-RkdMgDD

@@ -40,21 +40,30 @@ def next_batch(num, data, labels):
 
 x = tf.placeholder(tf.int32, [None, 1024])
 xx = tf.one_hot(indices=x, depth=tokens_length, on_value=1.0, off_value=0.0, axis=-1)
+
+print(xx.shape)
 xxx = tf.reshape(xx, [-1, 1024, tokens_length, 1])
 
+print(xxx.shape)
 y_ = tf.placeholder(tf.float32, [None, 3])  # answers
 lr = tf.placeholder(tf.float32)
 
 W1 = tf.Variable(tf.truncated_normal([4, tokens_length, 1, 4], stddev=0.1))
 B1 = tf.Variable(tf.ones([4]) / 10)
-stride = 1
-Y1 = tf.nn.relu(tf.nn.conv2d(xxx, W1, strides=[1, stride, stride, 1], padding='SAME') + B1)
+Y1 = tf.nn.relu(tf.nn.conv2d(xxx, W1, strides=[1, 2, 107, 1], padding='VALID') + B1)
 
-fully_connected_size = 1024 * tokens_length * 4
+print("Y1 " + str(Y1.shape))
+
+fully_connected_size = 2044
 
 YY1 = tf.reshape(Y1, shape=[-1, fully_connected_size])
+print("YY1 " + str(YY1.shape))
+
 
 W2 = tf.Variable(tf.truncated_normal([fully_connected_size, 3], stddev=0.1))
+
+print("W2 " + str(W2.shape))
+
 B2 = tf.Variable(tf.zeros([3]))
 Ylogits = tf.matmul(YY1, W2) + B2
 Y = tf.nn.softmax(Ylogits)

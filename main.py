@@ -13,19 +13,16 @@ with open('image_and_complexity.csv', 'r') as f:
         data.append(row)
 
 data = np.array(data)
-data = data.astype(np.float)
+data = data.astype(np.int)
 
 labels = data[:, 0]
 labels = [[1 if label < 6 else 0, 1 if 6 <= label < 13 else 0, 1 if 13 <= label else 0] for label in labels]
+
+tokens_length = 107
+
 inputs = []
-
-
-def arraify(x):
-    return [[y] for y in x]
-
-
 for row in data[:, 1:]:
-    inputs.append(arraify(row))
+    inputs.append(row - 1)
 
 X_train, X_test, y_train, y_test = train_test_split(inputs, labels, test_size=0.33, random_state=42)
 
@@ -40,17 +37,20 @@ def next_batch(num, data, labels):
     return np.asarray(data_shuffle), np.asarray(labels_shuffle)
 
 
-x = tf.placeholder(tf.float32, [None, 1024, 1])  # input
+x = tf.placeholder(tf.int32, [None, 1024])
+xx = tf.one_hot(indices=x, depth=tokens_length, on_value=1.0, off_value=0.0, axis=-1)
+xxx = tf.reshape(xx, [-1, 1024, tokens_length, 1])
+
 y_ = tf.placeholder(tf.float32, [None, 3])  # answers
 lr = tf.placeholder(tf.float32)
 
-W1 = tf.Variable(tf.truncated_normal([4, 1, 4], stddev=0.1))
-B1 = tf.Variable(tf.zeros([4]))
-Y1 = tf.nn.relu(tf.nn.conv1d(x, W1, stride=1, padding='SAME') + B1)
+W1 = tf.Variable(tf.truncated_normal([4, 4, 1, 4], stddev=0.1))
+B1 = tf.Variable(tf.ones([4]) / 10)
+Y1 = tf.nn.relu(tf.nn.conv2d(xxx, W1, strides=[1, 1, 1, 1], padding='SAME') + B1)
 
-YY1 = tf.reshape(Y1, shape=[-1, 4096])
+YY1 = tf.reshape(Y1, shape=[-1, 1024 * tokens_length * 4])
 
-W2 = tf.Variable(tf.truncated_normal([4096, 3], stddev=0.1))
+W2 = tf.Variable(tf.truncated_normal([1024 * tokens_length * 4, 3], stddev=0.1))
 B2 = tf.Variable(tf.zeros([3]))
 Ylogits = tf.matmul(YY1, W2) + B2
 Y = tf.nn.softmax(Ylogits)

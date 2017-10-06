@@ -16,7 +16,7 @@ data = np.array(data)
 data = data.astype(np.float)
 
 labels = data[:, 0]
-labels = [[1 if label == 0 else 0, 1 if label > 0 else 0] for label in labels]
+labels = [[1 if label < 6 else 0, 1 if 6 <= label < 13 else 0, 1 if 13 <= label else 0] for label in labels]
 inputs = data[:, 1:]
 
 X_train, X_test, y_train, y_test = train_test_split(inputs, labels, test_size=0.33, random_state=42)
@@ -33,20 +33,20 @@ def next_batch(num, data, labels):
 
 
 x = tf.placeholder(tf.float32, [None, 1024])  # input
-y_ = tf.placeholder(tf.float32, [None, 2])  # answers
+y_ = tf.placeholder(tf.float32, [None, 3])  # answers
 lr = tf.placeholder(tf.float32)
 
 W1 = tf.Variable(tf.truncated_normal([1024, 512], stddev=0.1))
 B1 = tf.Variable(tf.zeros([512]))
 Y1 = tf.nn.sigmoid(tf.matmul(x, W1) + B1)
 #
-W2 = tf.Variable(tf.truncated_normal([512, 2], stddev=0.1))
-B2 = tf.Variable(tf.zeros([2]))
+W2 = tf.Variable(tf.truncated_normal([512, 3], stddev=0.1))
+B2 = tf.Variable(tf.zeros([3]))
 Ylogits = tf.matmul(Y1, W2) + B2
 Y = tf.nn.softmax(Ylogits)
 
 cost_fn = tf.nn.softmax_cross_entropy_with_logits(logits=Ylogits, labels=y_)
-cost_fn = tf.reduce_mean(cost_fn)*100
+cost_fn = tf.reduce_mean(cost_fn) * 100
 
 # accuracy of the trained model, between 0 (worst) and 1 (best)
 correct_prediction = tf.equal(tf.argmax(Y, 1), tf.argmax(y_, 1))
@@ -71,18 +71,18 @@ for epoch in range(epoch_count):
         batch_x, batch_y = next_batch(100, X_train, y_train)
 
         # learning rate decay
-        max_learning_rate = 0.003
-        min_learning_rate = 0.0001
+        max_learning_rate = 0.001
+        min_learning_rate = 0.00003
         decay_speed = 2000.0
-        learning_rate = min_learning_rate + (max_learning_rate - min_learning_rate) * math.exp(-total_step / decay_speed)
+        learning_rate = min_learning_rate + (max_learning_rate - min_learning_rate) * math.exp(
+            -total_step / decay_speed)
         # learning_rate = 0.005
 
         # the backpropagation training step
         sess.run(train_step, {x: batch_x, y_: batch_y, lr: learning_rate})
 
-    accuracy, loss, prediction = sess.run([accuracy_fn, cost_fn, correct_prediction],
-                                          {x: X_test, y_: y_test})
-    print("********* epoch " + str(epoch) + " ********* accuracy: " + str(accuracy) + " test loss: " + str(loss))
+    accuracy, = sess.run([accuracy_fn], {x: X_test, y_: y_test})
+    print("********* epoch " + str(epoch) + " ********* accuracy: " + str(accuracy))
 
 # 12
 print(sess.run([Y], {x: [

@@ -92,11 +92,11 @@ lr = tf.placeholder(tf.float32)
 # # Ylogits = tf.matmul(Y4, W5) + B5
 # # Y = Ylogits
 #
-W1 = tf.Variable(tf.truncated_normal([1024, 200], stddev=0.1))
-B1 = tf.Variable(tf.zeros([200]))
+W1 = tf.Variable(tf.truncated_normal([1024, 512], stddev=0.1))
+B1 = tf.Variable(tf.zeros([512]))
 Y1 = tf.nn.sigmoid(tf.matmul(x, W1) + B1)
 #
-W2 = tf.Variable(tf.truncated_normal([200, 2], stddev=0.1))
+W2 = tf.Variable(tf.truncated_normal([512, 2], stddev=0.1))
 B2 = tf.Variable(tf.zeros([2]))
 Ylogits = tf.matmul(Y1, W2) + B2
 Y = tf.nn.softmax(Ylogits)

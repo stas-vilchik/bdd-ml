@@ -35,63 +35,7 @@ def next_batch(num, data, labels):
 x = tf.placeholder(tf.float32, [None, 1024])  # input
 y_ = tf.placeholder(tf.float32, [None, 2])  # answers
 lr = tf.placeholder(tf.float32)
-#
-# # k = 4  # first convolutional layer output depth
-# # l = 8  # second convolutional layer output depth
-# # m = 12  # third convolutional layer
-# # n = 200  # fully connected layer
-# #
-# # w1 = tf.Variable(tf.truncated_normal([5, 5, 1, k], stddev=0.1))  # 5x5 patch, 1 input channel, K output channels
-# # b1 = tf.Variable(tf.ones([k]) / 10)
-# # w2 = tf.Variable(tf.truncated_normal([5, 5, k, l], stddev=0.1))
-# # b2 = tf.Variable(tf.ones([l]) / 10)
-# # w3 = tf.Variable(tf.truncated_normal([4, 4, l, m], stddev=0.1))
-# # b3 = tf.Variable(tf.ones([m]) / 10)
-# #
-# # w4 = tf.Variable(tf.truncated_normal([7 * 7 * m, n], stddev=0.1))
-# # b4 = tf.Variable(tf.ones([n]) / 10)
-# # w5 = tf.Variable(tf.truncated_normal([n, 10], stddev=0.1))
-# # b5 = tf.Variable(tf.ones([10]) / 10)
-# #
-# # # The model
-# # stride = 1  # output is 28x28
-# # y1 = tf.nn.relu(tf.nn.conv1d(x, w1, stride=stride, padding='SAME') + b1)
-# # stride = 2  # output is 14x14
-# # y2 = tf.nn.relu(tf.nn.conv1d(y1, w2, stride=stride, padding='SAME') + b2)
-# # stride = 2  # output is 7x7
-# # y3 = tf.nn.relu(tf.nn.conv1d(y2, w3, stride=stride, padding='SAME') + b3)
-# #
-# # yy = tf.reshape(y3, shape=[-1, 7 * 7 * m])
-# #
-# # y4 = tf.nn.relu(tf.matmul(yy, w4) + b4)
-# # yLogits = tf.matmul(y4, w5) + b5
-# # y = tf.nn.softmax(yLogits)
-#
-# # L = 200
-# # M = 100
-# # N = 60
-# # O = 30
-# # # Weights initialised with small random values between -0.2 and +0.2
-# # # When using RELUs, make sure biases are initialised with small *positive* values for example 0.1 = tf.ones([K])/10
-# # W1 = tf.Variable(tf.truncated_normal([1024, L], stddev=0.1))
-# # B1 = tf.Variable(tf.zeros([L]))
-# # W2 = tf.Variable(tf.truncated_normal([L, M], stddev=0.1))
-# # B2 = tf.Variable(tf.zeros([M]))
-# # W3 = tf.Variable(tf.truncated_normal([M, N], stddev=0.1))
-# # B3 = tf.Variable(tf.zeros([N]))
-# # W4 = tf.Variable(tf.truncated_normal([N, O], stddev=0.1))
-# # B4 = tf.Variable(tf.zeros([O]))
-# # W5 = tf.Variable(tf.truncated_normal([O, 1], stddev=0.1))
-# # B5 = tf.Variable(tf.zeros([1]))
-# #
-# # # The model
-# # Y1 = tf.nn.sigmoid(tf.matmul(x, W1) + B1)
-# # Y2 = tf.nn.sigmoid(tf.matmul(Y1, W2) + B2)
-# # Y3 = tf.nn.sigmoid(tf.matmul(Y2, W3) + B3)
-# # Y4 = tf.nn.sigmoid(tf.matmul(Y3, W4) + B4)
-# # Ylogits = tf.matmul(Y4, W5) + B5
-# # Y = Ylogits
-#
+
 W1 = tf.Variable(tf.truncated_normal([1024, 512], stddev=0.1))
 B1 = tf.Variable(tf.zeros([512]))
 Y1 = tf.nn.sigmoid(tf.matmul(x, W1) + B1)

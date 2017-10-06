@@ -17,7 +17,15 @@ data = data.astype(np.float)
 
 labels = data[:, 0]
 labels = [[1 if label < 6 else 0, 1 if 6 <= label < 13 else 0, 1 if 13 <= label else 0] for label in labels]
-inputs = data[:, 1:]
+inputs = []
+
+
+def arraify(x):
+    return [[y] for y in x]
+
+
+for row in data[:, 1:]:
+    inputs.append(arraify(row))
 
 X_train, X_test, y_train, y_test = train_test_split(inputs, labels, test_size=0.33, random_state=42)
 
@@ -32,17 +40,19 @@ def next_batch(num, data, labels):
     return np.asarray(data_shuffle), np.asarray(labels_shuffle)
 
 
-x = tf.placeholder(tf.float32, [None, 1024])  # input
+x = tf.placeholder(tf.float32, [None, 1024, 1])  # input
 y_ = tf.placeholder(tf.float32, [None, 3])  # answers
 lr = tf.placeholder(tf.float32)
 
-W1 = tf.Variable(tf.truncated_normal([1024, 512], stddev=0.1))
-B1 = tf.Variable(tf.zeros([512]))
-Y1 = tf.nn.sigmoid(tf.matmul(x, W1) + B1)
-#
-W2 = tf.Variable(tf.truncated_normal([512, 3], stddev=0.1))
+W1 = tf.Variable(tf.truncated_normal([4, 1, 4], stddev=0.1))
+B1 = tf.Variable(tf.zeros([4]))
+Y1 = tf.nn.relu(tf.nn.conv1d(x, W1, stride=1, padding='SAME') + B1)
+
+YY1 = tf.reshape(Y1, shape=[-1, 4096])
+
+W2 = tf.Variable(tf.truncated_normal([4096, 3], stddev=0.1))
 B2 = tf.Variable(tf.zeros([3]))
-Ylogits = tf.matmul(Y1, W2) + B2
+Ylogits = tf.matmul(YY1, W2) + B2
 Y = tf.nn.softmax(Ylogits)
 
 cost_fn = tf.nn.softmax_cross_entropy_with_logits(logits=Ylogits, labels=y_)
@@ -85,7 +95,7 @@ for epoch in range(epoch_count):
     print("********* epoch " + str(epoch) + " ********* accuracy: " + str(accuracy))
 
 # 12
-print(sess.run([Y], {x: [
+print(sess.run([Y], {x: [arraify(
     [1, 53, 3, 99, 10, 101, 26, 97, 4, 1, 99, 10, 101, 17, 99, 3, 99, 9, 97, 4, 7, 53, 3, 97, 28, 97, 31, 99, 10, 101,
      4, 1, 99, 3, 97, 13, 97, 13, 97, 4, 7, 2, 2, 54, 1, 59, 100, 17, 99, 3, 99, 9, 97, 4, 7, 53, 3, 99, 4, 1, 99, 10,
      101, 17, 99, 26, 97, 11, 97, 8, 99, 7, 99, 3, 99, 9, 97, 9, 99, 4, 7, 2, 53, 3, 99, 10, 101, 26, 97, 4, 1, 99, 10,
@@ -113,10 +123,10 @@ print(sess.run([Y], {x: [
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]}))
+     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])]}))
 
 # # 0
-print(sess.run([Y], {x: [
+print(sess.run([Y], {x: [arraify(
     [1, 99, 10, 101, 3, 72, 5, 97, 6, 42, 99, 9, 98, 4, 7, 2, 78, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -144,4 +154,4 @@ print(sess.run([Y], {x: [
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-     0]]}))
+     0])]}))
